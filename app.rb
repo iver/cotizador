@@ -1,8 +1,10 @@
+require 'sinatra'
 require 'sinatra/base'
+require 'slim'
 
 class Cotizador < Sinatra::Base
     get '/' do
-      'Hello World!'
+       slim :home
     end
 end
 
