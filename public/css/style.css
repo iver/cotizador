@@ -1,0 +1,43 @@
+/* author: Iván Jaimes Martínez (iver)
+ * site: www.iver.mx
+ * email: ivan.jaimes@iver.mx
+ * */
+body {
+  font-family: Verdana, Geneva, sans-serif;
+  color: #333;
+  font-size: 13px;
+  letter-spacing: -.5px;
+}
+
+.list-iform {
+  background-image: url('../img/bullet.jpg');
+  background-repeat: no-repeat;
+  background-position: 0 .4em;
+  padding: 3px 0px 3px 10px;
+  margin: 0;
+}
+
+h2.title {
+  font-size: 15px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.select {
+  font-size: 12px;
+  height: 26px;
+  border-radius: 5px;
+  font: -webkit-small-control;
+}
+
+.debug-blue {
+  border: solid 1px blue;
+}
+
+.debug-red {
+  border: solid 1px red;
+}
+
+.debug-yellow {
+  border: solid 1px yellow;
+}
