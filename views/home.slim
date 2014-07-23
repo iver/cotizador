@@ -50,33 +50,21 @@ div class="section container"
 
     div class="row col-md-8"
      div class="col-md-4 text-right"
-       | Tipo de plaga:
+       | Tipo de fumigación:
      div class="col-md-4" id="wrap"
-       ul class="list-group"
-         li class="list-group-item" Cucaracha
-         li Rata / Raton
-         li Hormiga
-         li Chinche
-         li Mosquito
-         li Mosca
-         li Pulga
-         li Insectos de Jardin
-         li Termita
-         li Polilla
-         li Otro
-    button type="button" class="btn btn-xs btn-plus" id="btnPlagas" data-toggle="modal" data-target="#plagas"
-      i class="glyphicon-plus"
-
+       select id="selectPlagas" multiple="true"
+          option value="cucaracha" Cucaracha
+          option value="rata" Rata / Raton
+          option value="hormiga" Hormiga
+          option value="chinche" Chinche
+          option value="mosquito" Mosquito
+          option value="mosca" Mosca
+          option value="pulga" Pulga
+          option value="insectos" Insectos de Jardin
+          option value="termita" Termita
+          option value="polilla" Polilla
+          option value="otro" Otro
+    button type="button" class="btn btn-xs" id="btnValida" Valida esta madre!
   </form>
-
-  div class="modal fade" id="plagas" tabindex="-1" role="dialog"  aria-labelledby="" aria-hidden="true"
-    div class="container"
-      div class="row"
-        div class="col-sm-6 col-sm-offset-3 text-center"
-          h2 class="modal-title" Catálogo de plagas
-          br
-
-      div class="row"
-        button type="button" data-dismiss="modal" class="btn btn-md" Cerrar
 
 
