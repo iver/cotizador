@@ -8,7 +8,9 @@ body {
   font-size: 13px;
   letter-spacing: -.5px;
 }
-
+div:before{
+  margin-top: 5px !important;
+}
 .list-iform {
   background-image: url('../img/bullet.jpg');
   background-repeat: no-repeat;
@@ -25,7 +27,8 @@ h2.title {
 
 .select {
   font-size: 12px;
-  height: 26px;
+  width: 165px;
+  padding: 5px 0;
   border-radius: 5px;
   font: -webkit-small-control;
 }
