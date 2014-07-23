@@ -8,9 +8,11 @@ body {
   font-size: 13px;
   letter-spacing: -.5px;
 }
+
 div:before{
   margin-top: 5px !important;
 }
+
 .list-iform {
   background-image: url('../img/bullet.jpg');
   background-repeat: no-repeat;
@@ -19,7 +21,8 @@ div:before{
   margin: 0;
 }
 
-h2.title {
+h2.title,
+h2.modal-title {
   font-size: 15px;
   text-decoration: none;
   font-weight: bold;
@@ -31,6 +34,31 @@ h2.title {
   padding: 5px 0;
   border-radius: 5px;
   font: -webkit-small-control;
+}
+
+.btn-plus {
+  background-color: white;
+  border: solid 1px rgb(166, 166, 166);
+}
+.btn-plus:hover {
+  background-color: #659a22;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  color: #ffffff;
+}
+
+body.modal-open #wrap{
+  -webkit-filter: blur(7px);
+  -moz-filter: blur(15px);
+  -o-filter: blur(15px);
+  -ms-filter: blur(15px);
+  filter: blur(15px);
+}
+
+.modal-title {
+  color: #659a22;
+}
+.modal-backdrop {
+  background: #f7f7f7;
 }
 
 .debug-blue {
