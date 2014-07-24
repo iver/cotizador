@@ -1,34 +1,34 @@
-div class="section container"
+div class="section container body"
   <form action="/cotizador" method="post" >
    div class="row col-md-8"
     h2 class="title" Solicitud de servicio
     div class="row col-md-8"
-      div class="col-md-4 text-right"
+      div class="col-md-4 text-left list-iform"
         | Nombre:
       div class="col-md-4"
         input type="text" id="nombre" name="nombre"
     div class="row col-md-8"
-      div class="col-md-4 text-right"
+      div class="col-md-4 text-left list-iform"
         | Apellido:
       div class="col-md-4"
         input type="text" id="apellido" name="apellido"
     div class="row col-md-8"
-      div class="col-md-4 text-right"
+      div class="col-md-4 text-left list-iform"
         | Correo elctrónico:
       div class="col-md-4"
         input type="text" id="email" name="email"
     div class="row col-md-8"
-      div class="col-md-4 text-right"
+      div class="col-md-4 text-left list-iform"
         | Calle y número:
       div class="col-md-4"
         input type="text" id="calle" name="calle"
     div class="row col-md-8"
-      div class="col-md-4 text-right"
+      div class="col-md-4 text-left list-iform"
         | Colonia:
       div class="col-md-4"
         input type="text" id="colonia" name="colonia"
     div class="row col-md-8"
-      div class="col-md-4 text-right"
+      div class="col-md-4 text-left list-iform"
         | Código Postal:
       div class="col-md-4"
         input type="text" id="cp" name="cp"
@@ -39,32 +39,55 @@ div class="section container"
   div class="row col-md-8"
     h2 class="title" Cotización en línea
     div class="row col-md-8"
-      div class="col-md-4 text-right"
+      div class="col-md-4 text-left list-iform"
         | Extensión de:
       div class="col-md-4"
-          <select class="col-md-3 select">
-             <option> 1m - 75m </option>
-             <option> 75.1m - 120m </option>
-             <option> Mayor a 120m </option>
-          </select>
+          select id="selectExtension"
+             option 1m - 75m
+             option 75.1m - 120m
+             option Mayor a 120m
 
     div class="row col-md-8"
-     div class="col-md-4 text-right"
-       | Tipo de fumigación:
-     div class="col-md-4" id="wrap"
-       select id="selectPlagas" multiple="true"
-          option value="cucaracha" Cucaracha
-          option value="rata" Rata / Raton
-          option value="hormiga" Hormiga
-          option value="chinche" Chinche
-          option value="mosquito" Mosquito
-          option value="mosca" Mosca
-          option value="pulga" Pulga
-          option value="insectos" Insectos de Jardin
-          option value="termita" Termita
-          option value="polilla" Polilla
-          option value="otro" Otro
-    button type="button" class="btn btn-xs" id="btnValida" Valida esta madre!
+      div class="col-md-4 text-left list-iform"
+        | Tipo de fumigación:
+      div class="tab-container"
+        ul class="nav nav-tabs"
+         li class="active"
+           a href="#tab_a" data-toggle="tab" Varias plagas
+         li
+           a href="#tab_b" data-toggle="tab" Por plaga
+         li
+           a href="#tab_c" data-toggle="tab" Roedores
+
+    div class="row col-md-8"
+      div class="col-md-offset-4 col-md-4" id="wrap"
+        div class="tab-content"
+          div class="tab-pane active" id="tab_a"
+           select id="selectPlagas_a" multiple="true"
+            option value="cucaracha" Cucaracha
+            option value="hormiga" Hormiga
+            option value="chinche" Chinche
+            option value="mosquito" Mosquito
+            option value="mosca" Mosca
+            option value="pulga" Pulga
+            option value="insectos" Insectos de Jardin
+            option value="otro" Otro
+
+          div class="tab-pane" id="tab_b"
+           select id="selectPlagas_b"
+            option value="termita" Termita
+            option value="polilla" Polilla
+            option value="aves" Aves
+
+          div class="tab-pane" id="tab_c"
+            select id="selectPlagas_c"
+              option value="raton" Rata / Ratón
+
+    div class="row col-md-8"
+      hr
+
+    div class="row col-md-8 pull-right"
+      button type="button" class="btn btn-xs btn-success" id="btnValida" Calcular
   </form>
 
 

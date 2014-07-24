@@ -7,8 +7,20 @@
 }(window.sifsa = window.sifsa || {}, jQuery));
 
 $(function() {
-  $("#selectPlagas").select2({
+  $("#selectExtension").select2({
+    width: 165
+  });
+
+  $("#selectPlagas_a").select2({
     placeholder: "Selecciona una  plaga",
+    width: 165
+  });
+  $("#selectPlagas_b").select2({
+    placeholder: "Selecciona una  plaga",
+    width: 165
+  });
+  $("#selectPlagas_c").select2({
+    placeholder: "Selecciona un roedor",
     width: 165
   });
 
