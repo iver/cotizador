@@ -1,5 +1,9 @@
 div class="section container body"
-  <form action="/cotizador" method="post" >
+  <form action="/cotizador" method="post"
+  | data-bv-feedbackicons-valid="glyphicon glyphicon-ok"
+  | data-bv-feedbackicons-invalid="glyphicon glyphicon-remove"
+  | data-bv-feedbackicons-validating="glyphicon glyphicon-refresh">
+
   div class="row col-md-8"
     h2 class="title" Cotización en línea
     div class="row col-md-8"
@@ -13,21 +17,23 @@ div class="section container body"
         | Extensión de:
       div class="col-md-4"
           select id="selectExtension"
-             option 1m - 75m
-             option 75.1m - 120m
-             option Mayor a 120m
+             option value="min" 1m - 75m
+             option value="med" 75.1m - 120m
+             option value="mayor" Mayor a 120m
+          input type="hidden" name="extension" id="extension" value="min"
 
     div class="row col-md-8"
       div class="col-md-4 text-left list-iform"
         | Tipo de fumigación:
       div class="tab-container"
-        ul class="nav nav-tabs"
-         li class="active"
+      ul class="nav nav-tabs" id="tabSelection"
+         li class="active" data-val="many"
            a href="#tab_a" data-toggle="tab" Varias plagas
-         li
+         li data-val="one"
            a href="#tab_b" data-toggle="tab" Por plaga
-         li
+         li data-val="rodent"
            a href="#tab_c" data-toggle="tab" Roedores
+         input type="hidden" name="tipo" id="tipo"
 
     div class="row col-md-8"
       div class="col-md-4"
@@ -55,6 +61,7 @@ div class="section container body"
           div class="tab-pane" id="tab_c"
             select id="selectPlagas_c"
               option value="raton" Rata / Ratón
+      input type="hidden" name="plaga" id="plaga"
 
     div class="row col-md-8"
       div class="4"

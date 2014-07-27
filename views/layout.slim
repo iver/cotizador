@@ -4,20 +4,25 @@ html
       title Sifsa - Cotizador en línea
       link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet"
       link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" rel="stylesheet"
+      link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"
       link href="//cdn.jsdelivr.net/select2/3.4.8/select2.css" rel="stylesheet"
       link href="//cdn.jsdelivr.net/select2/3.4.8/select2-bootstrap.css" rel="stylesheet"
+      link href="//cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.0/css/bootstrapValidator.min.css"
       link href="css/style.css" rel="stylesheet"
       link href="css/datepicker.css" rel="stylesheet"
       script src="//code.jquery.com/jquery-1.11.1.min.js"
       script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"
+      script src="//cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.0/js/bootstrapValidator.min.js"
       script src="//cdn.jsdelivr.net/select2/3.4.8/select2.js"
       script src="//cdn.jsdelivr.net/select2/3.4.8/select2_locale_es.js"
       script src="js/bootstrap-datepicker.js"
-      script src="js/bootstrap-datepicker.es.js"
+      script src="js/locales/bootstrap-datepicker.es.js"
+      script src="js/locales/bootstrap-validator.es_ES.js"
       /[if lt IE 9]
           script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.js"
           script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.2.0/respond.js"
     body
       == yield
 
+    script src="js/sifsa.js"
     script src="js/negocio.js"
