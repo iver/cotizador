@@ -4,10 +4,11 @@
     sifsa.remote = function (ajaxOptions) {
         $.ajax({
             url: ajaxOptions.url,
-            type: 'POST',
-            datatype: 'json',
+            type: ajaxOptions.type || 'POST',
+            datatype: ajaxOptions.datatype || 'json',
             global: ajaxOptions.global || true,
             contentType: 'application/json',
+            data: ajaxOptions.data,
             beforeSend: function (xhr, settings) {
                 xhr.setRequestHeader('Accept','application/json');
                 if($.isFunction(ajaxOptions.beforeSend)) {

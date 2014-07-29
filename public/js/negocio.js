@@ -34,6 +34,11 @@ $(function () {
     $('#btnEstimate').on("click", function () {
        var options = {
          url: '/cotizar',
+         data: JSON.stringify({
+           'extension' : result.extension(),
+           'tipo' : result.tipo(),
+           'plaga' : result.plaga()
+         }),
          success: function (response) {
              console.log('salida->'+response);
          }
