@@ -1,7 +1,14 @@
 class Cotizador
-  def calcular (extension, plaga)
+  def calcular (extension, tipo, plaga)
      cost = calcula_extension extension
-     numbers = costo_plaga plaga
+     if cost == 0
+       return nil # SE COTIZA EN SITIO
+     end
+     if tipo == "rodent"
+        numbers = costo_roedor extension
+     else
+        numbers = costo_plaga plaga
+     end
      cost + numbers
   end
   def calcula_extension (extension)
@@ -21,6 +28,14 @@ class Cotizador
         elements * cost
      else
        0
+     end
+  end
+  def costo_roedor (extension)
+     case extension
+     when "min"
+       340
+     else
+       500
      end
   end
 end
