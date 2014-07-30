@@ -62,9 +62,16 @@
         output.append(html);
     };
     sifsa.showSuccess = function (action, message) {
-        var html = sifsa.message.sent(action, message);
+        var html = sifsa.message.success(action, message);
         output.append(html);
     };
-
+    sifsa.showInfo = function (action, message) {
+        var html = sifsa.message.info(action, message);
+        output.append(html);
+    };
+    sifsa.showWarning = function (action, message) {
+        var html = sifsa.message.warning(action, message);
+        output.append(html);
+    };
 
 }(window.sifsa = window.sifsa || {}, jQuery));

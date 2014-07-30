@@ -40,7 +40,14 @@ $(function () {
            'plaga' : result.plaga()
          }),
          success: function (response) {
-             console.log('salida->'+response);
+            var cost = response.cost;
+            if(cost == null) {
+              sifsa.showInfo("", "Su cotización debe realizarse en el sitio");
+            } else
+            {
+               var msg = "$" + cost + " MXN";
+               sifsa.showSuccess("Costo estimado:", msg);
+            }
          }
        };
        sifsa.remote(options);

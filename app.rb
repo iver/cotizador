@@ -1,11 +1,9 @@
 require 'sinatra/base'
-require 'sinatra/json'
+require 'json'
 require 'slim'
 require 'core/cotizador'
-require 'core/result'
 
 class CotizadorApp < Sinatra::Base
-    helpers Sinatra::JSON
     configure :production, :development do
       enable :logging
     end
@@ -23,7 +21,7 @@ class CotizadorApp < Sinatra::Base
          cotizador = Cotizador.new
          cost = cotizador.calcular  data["extension"], data["tipo"], data["plaga"]
          logger.info cost
-         json :cost => cost
+         { :cost => cost }.to_json
       else
          status 422
          logger.info "nada que mostrar"
