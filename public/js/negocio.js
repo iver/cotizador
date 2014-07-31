@@ -21,6 +21,25 @@ $(function () {
         }
     };
 
+    var data = {
+        extension: function () {
+            return $('#selectExtension').select2('data').text;
+        },
+        plaga: function () {
+            switch (result.tipo()) {
+            case 'rodent':
+               if (result.extension() == 'min') {
+                  return '(Incluye 3 estaciones)';
+               }
+               if (result.extension() == 'med') {
+                  return '(Incluye 4 estaciones)';
+               }
+            default:
+               return '';
+            }
+        }
+    };
+
     $("#selectExtension").select2({ width: 165 });
     $("#selectPlagas_a").select2({  placeholder: "Selecciona una  plaga",  width: 165 });
     $("#selectPlagas_b").select2({  placeholder: "Selecciona una  plaga",  width: 165 });
@@ -31,6 +50,21 @@ $(function () {
         $('input[name="extension"]').val(ext);
     });
 
+    var showCost = function (cost){
+        if(cost == null) {
+          sifsa.showInfo("", "Su cotización debe realizarse en el sitio");
+        }
+        else
+        {
+           var msg = ["<br>$ ", cost, " MXN ", data.plaga() ].join('');
+           var ext = data.extension();
+           var pga = result.plaga();
+
+           var title = ["Servicio de ", ext, " para ", pga ].join('');
+           sifsa.showSuccess(title, msg);
+        }
+    };
+
     $('#btnEstimate').on("click", function () {
        var options = {
          url: '/cotizar',
@@ -40,14 +74,7 @@ $(function () {
            'plaga' : result.plaga()
          }),
          success: function (response) {
-            var cost = response.cost;
-            if(cost == null) {
-              sifsa.showInfo("", "Su cotización debe realizarse en el sitio");
-            } else
-            {
-               var msg = "$" + cost + " MXN";
-               sifsa.showSuccess("Costo estimado:", msg);
-            }
+            showCost(response.cost);
          }
        };
        sifsa.remote(options);
@@ -60,5 +87,7 @@ $(function () {
         autoclose: true,
         todayHighlight: true
     });
+
+    $('#formCotizacion').bootstrapValidator();
 
 });

@@ -1,5 +1,5 @@
 div class="section container body"
-  <form action="/cotizador" method="post"
+  <form action="/cotizar" method="post" id="formCotizacion"
   | data-bv-feedbackicons-valid="glyphicon glyphicon-ok"
   | data-bv-feedbackicons-invalid="glyphicon glyphicon-remove"
   | data-bv-feedbackicons-validating="glyphicon glyphicon-refresh">
@@ -66,42 +66,42 @@ div class="section container body"
     div class="row col-md-8"
       div class="4"
 
-    div class="row col-md8"
-      div class="col-md-offset-2 col-md-6" id="output"
+    div class="row col-md-10"
+      div class="col-md-offset-2 col-md-7" id="output"
 
-  div class="row col-md-8"
+  div class="row col-md-8 "
     h2 class="title" Solicitud de servicio
-    div class="row col-md-8"
+    div class="row col-md-9"
       div class="col-md-4 text-left list-iform"
         | Nombre:
-      div class="col-md-4"
-        input type="text" id="nombre" name="nombre"
-    div class="row col-md-8"
+      div class="col-md-5 form-group"
+        input type="text" id="nombre" name="nombre" class="form-control" data-bv-notempty="true" data-bv-notempty-message="El nombre es requerido"
+    div class="row col-md-9"
       div class="col-md-4 text-left list-iform"
         | Apellido:
-      div class="col-md-4"
-        input type="text" id="apellido" name="apellido"
-    div class="row col-md-8"
+      div class="col-md-5 form-group"
+        input type="text" id="apellido" name="apellido" class="form-control" data-bv-notempty="true" data-bv-notempty-message="El apellido es requerido"
+    div class="row col-md-9"
       div class="col-md-4 text-left list-iform"
         | Correo elctrónico:
-      div class="col-md-4"
-        input type="text" id="email" name="email"
-    div class="row col-md-8"
+      div class="col-md-5 form-group"
+        input type="text" id="email" name="email" class="form-control" data-bv-notempty="true" data-bv-notempty-message="El correo electrónico es requerido" data-bv-emailaddress="true" data-bv-emailaddress-message="El correo electrónico no es válido"
+    div class="row col-md-9"
       div class="col-md-4 text-left list-iform"
         | Calle y número:
-      div class="col-md-4"
-        input type="text" id="calle" name="calle"
-    div class="row col-md-8"
+      div class="col-md-5 form-group"
+        input type="text" id="calle" name="calle" class="form-control"
+    div class="row col-md-9"
       div class="col-md-4 text-left list-iform"
         | Colonia:
-      div class="col-md-4"
-        input type="text" id="colonia" name="colonia"
-    div class="row col-md-8"
+      div class="col-md-5 form-group"
+        input type="text" id="colonia" name="colonia" class="form-control"
+    div class="row col-md-9"
       div class="col-md-4 text-left list-iform"
         | Código Postal:
-      div class="col-md-4"
-        input type="text" id="cp" name="cp"
-    div class="row col-md-8"
+      div class="col-md-5 form-group"
+        input type="text" id="cp" name="cp" class="form-control"
+    div class="row col-md-9"
       div class="col-md-4 text-left list-iform"
         | Fecha del servicio:
       div class="col-md-5" id="dateControl"
@@ -115,9 +115,7 @@ div class="section container body"
 
     div class="row col-md-8"
       div class="col-md-offset-4 col-md-5"
-         button type="button" class="btn btn-xs btn-success" id="btnShared" Compartir
-         button type="button" class="btn btn-xs btn-success pull-right" id="btnSent" Solicitar
-
+        button type="submit" class="btn btn-xs btn-success pull-right" id="btnSent" Solicitar
+      /  button type="button" class="btn btn-xs btn-success" id="btnShared" Compartir
 </form>
-
 

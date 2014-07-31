@@ -23,7 +23,7 @@ class CotizadorApp < Sinatra::Base
          logger.info cost
          { :cost => cost }.to_json
       else
-         status 422
+         logger.info "Entra #{params[:nombre]}"
          logger.info "nada que mostrar"
       end
     end
