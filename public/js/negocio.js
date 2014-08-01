@@ -46,9 +46,8 @@ $(function () {
     $("#selectPlagas_c").select2({  placeholder: "Selecciona un roedor",   width: 165 });
 
     $('#selectExtension').on('change', function () {
-        var ext = result.extension();
-        $('input[name="extension"]').val(ext);
-    });
+        var ext = data.extension();
+           });
 
     var showCost = function (cost){
         if(cost == null) {
@@ -86,6 +85,12 @@ $(function () {
         daysOfWeekDisabled: "0",
         autoclose: true,
         todayHighlight: true
+    });
+
+    $('#formCotizacion').submit(function () {
+       $('input[name="extension"]').val(data.extension());
+       $('input[name="tipo"]').val(result.tipo());
+       $('input[name="plaga"]').val(result.plaga());
     });
 
     $('#formCotizacion').bootstrapValidator();
