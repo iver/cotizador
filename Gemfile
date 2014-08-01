@@ -14,6 +14,10 @@ group :development do
   gem 'guard-unicorn'
 end
 
+group :production do
+  gem 'unicorn'
+end
+
 group :test do
   gem 'rack-test'
   gem 'rspec'
