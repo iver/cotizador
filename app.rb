@@ -4,8 +4,12 @@ require 'slim'
 require 'core/cotizador'
 
 class CotizadorApp < Sinatra::Base
-    configure :production, :development do
+    configure :development do
       enable :logging
+    end
+
+    configure :production do
+      disable :logging
     end
 
     get '/' do
