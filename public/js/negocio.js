@@ -47,7 +47,22 @@ $(function () {
 
     $('#selectExtension').on('change', function () {
         var ext = data.extension();
-           });
+    });
+
+    $('#cp').focusout(function () {
+      var cp = $('#cp').val();
+      var options = {
+         url: 'http://api.sifsa.iver.mx/cp/search',
+         data: JSON.stringify({
+           'code' : cp
+         }),
+         success: function (response) {
+            console.log("response");
+            console.dir(response);
+         }
+       };
+       sifsa.remote(options);
+    });
 
     var showCost = function (cost){
         if(cost == null) {

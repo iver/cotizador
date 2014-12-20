@@ -6,8 +6,8 @@ gem 'slim'
 gem 'json'
 
 group :development do
-  gem 'unicorn'
-  gem 'guard'
+#  gem 'unicorn'
+#  gem 'guard'
   gem 'listen'
   gem 'rb-inotify', :require => false
   gem 'rb-fsevent', :require => false
