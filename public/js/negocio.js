@@ -51,14 +51,17 @@ $(function () {
 
     $('#cp').focusout(function () {
       var cp = $('#cp').val();
+//      console.log("cp :"+ cp);
       var options = {
-         url: 'http://api.sifsa.iver.mx/cp/search',
+         url: 'http://api.sifsa.iver.mx/postal/seek',
+         type: 'POST',
          data: JSON.stringify({
-           'code' : cp
+           'code' : cp,
+           'api.key' : '$2a$12$ja9TcFc35v6VFRq11kwdPuT0Su4r6uYzOTnGAqzYsd5FKYuyewopa'
          }),
-         success: function (response) {
-            console.log("response");
-            console.dir(response);
+         success: function (postal) {
+            $('#municipio').val(postal.municipio);
+            $('#colonia').val(postal.colonia);
          }
        };
        sifsa.remote(options);

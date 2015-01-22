@@ -10,6 +10,7 @@
             contentType: 'application/json',
             data: ajaxOptions.data,
             beforeSend: function (xhr, settings) {
+                settings.data = ajaxOptions.data;
                 xhr.setRequestHeader('Accept','application/json');
                 if($.isFunction(ajaxOptions.beforeSend)) {
                     ajaxOptions.beforeSend(xhr, settings);
@@ -28,7 +29,8 @@
                 if ($.isFunction(ajaxOptions.complete)) {
                     ajaxOptions.complete(jqXHR, textStatus);
                 }
-            }
+            },
+            processData: true
         });
     };
 
