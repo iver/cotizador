@@ -16,7 +16,7 @@ GEM
       thor (>= 0.18.1)
     guard-unicorn (0.2.0)
       guard (>= 1.1)
-    json (2.6.1)
+    json (2.6.2)
     kgio (2.11.3)
     listen (3.7.0)
       rb-fsevent (~> 0.10, >= 0.10.3)
